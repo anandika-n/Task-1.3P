@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Your Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <header>
+        <h1>The Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Myself</h2>
+        <p>I am a passionate and results-driven individual with a strong interest in information technology. 
+            5 years of expertise in programming, cyber security, and website development. 
+            I have a track record of boosting income, optimizing operations, and successfully 
+            directing projects. My problem-solving, leadership, and communication abilities have 
+            constantly enabled me to flourish in difficult situations. I am well-known for my strong work
+            ethic, meticulous attention to detail, and dedication to providing high-quality solutions. 
+            I am pleased about the opportunity to use my talents and expertise to contribute to the 
+            company's success and help drive it forward.</p>
+        <p>I am a multifaceted professional with a diverse skill set and an ongoing passion for problem 
+            solving and creativity. My knowledge includes [name critical abilities, such as data analysis, 
+            project management, or programming], which I gained via hands-on experience in [say relevant 
+            sectors or projects]. My intense curiosity drives me to keep on top of changes in [name your 
+            sector or business], ensuring that my abilities remain relevant and flexible.
+            Beyond my work pursuits, I'm highly committed to [name your hobbies or interests, such as 
+            painting, hiking, or coding personal projects], which feeds my creativity and creates a 
+            balanced viewpoint. This combination of analytical ability and creative flare allows me to 
+            tackle problems creatively.
+            I respect cooperation and open communication, and I'm delighted to add my skills to a 
+            dynamic environment.</p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div id="app">
+            <table>
+                <tr>
+                    <th>Degree</th>
+                    <th>School/University</th>
+                    <th>Year</th>
+                </tr>
+                <tr v-for="(education, index) in educations" :key="index">
+                    <td><input v-model="education.degree" placeholder="Degree"></td>
+                    <td><input v-model="education.school" placeholder="School/University"></td>
+                    <td><input v-model="education.year" placeholder="Year"></td>
+                </tr>
+            </table>
+
+            <button @click="addEducation">Add Education</button>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <h2>Projects</h2>
+        <div class="project">
+            <img src="Project 1.png" alt="Project 1">
+            <h3>Project 1</h3>
+            <p>"Introvert vs. Extrovert Explained" is your entry point into the world of 
+                introversion and extroversion. This website digs into the complex tapestry of 
+                personality traits, providing insights that help people better understand themselves 
+                and those around them. Whether you tend toward introversion, extroversion, or are an 
+                ambivert, our tools can help you bridge the gap between these personality types. We 
+                examine the complexities of human connection, from scientific reasons to personal tales, 
+                assisting you in navigating a society that respects the variety of introverts and 
+                extroverts alike. Join us on this illuminating journey of self-discovery and community.</p>
+        </div>
+
+        <div class="project">
+            <img src="Project 2.png" alt="Project 2">
+            <h3>Project 2</h3>
+            <p>"Welcome to PeriodPal: Your Trusted Menstrual Companion." PeriodPal is your one-stop 
+                shop for all things menstrual health. Our website is committed to assist individuals 
+                navigating the complexities of their menstrual cycles with detailed information, advice,
+                 and support. We've got you covered if you're seeking for professional information on 
+                 managing symptoms, understanding your body, or exploring sustainable menstruation 
+                 products. Our purpose is to provide you with the knowledge and tools you need to 
+                 confidently embrace your menstrual journey. PeriodPal is dedicated to promoting a 
+                 better and more educated approach to menstruation, with everything from instructive 
+                 articles to product reviews and community forums. Join us in celebrating menstruation 
+                 health and breaking the stigma associated with this normal part of life.</p>
+        </div>
+
+        <div class="project">
+            <img src="Project 3.png" alt="Project 3"
+            <h4>Project 3</h4>
+            <p>"The Ultimate Todo App: Your Personal Task Management Solution." Our Todo App is intended 
+                to make your life easier by keeping you organized and productive. You can easily create,
+                prioritize, and monitor your projects and to-dos with easy tools and a user-friendly 
+                design. To maximize efficiency, set deadlines, get reminders, and classify work. 
+                Our Todo App is your trusty friend for organizing professional assignments, personal 
+                objectives, and everyday chores. Say goodbye to missed deadlines and hello to a more
+                organized, stress-free existence. Download our app now and have unprecedented control 
+                over your work."</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Anandika. All rights reserved.</p>
+    </footer>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                educations: [
+                    { degree: "Bachelor's in Information Technology", school: "Deakin University", year: "2015 - 2019" },
+                    { degree: "Master's in Information Technology", school: "Deakin University", year: "2019 - 2021" }
+                ]
+            },
+            methods: {
+                addEducation: function() {
+                    this.educations.push({ degree: "", school: "", year: "" });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
